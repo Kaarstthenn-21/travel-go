@@ -7,19 +7,10 @@
                         <img class="h-16 w-auto" src="{{ asset('images/icono5.ico') }}" alt="TravelGo">
                     </a>
                     <p class="mt-2 text-gray-600">Travel ayuda a las empresas a gestionar los pagos fácilmente.</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-gray-900"><img src="https://icones.pro/wp-content/uploads/2021/03/icone-linkedin-orange.png" alt="Linkedin" class="w-8 h-8 mx-auto"></a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900"><img src="https://icones.pro/wp-content/uploads/2021/05/symbole-messager-orange.png" alt="Messeger" class="w-8 h-8 mx-auto ml-4"></a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900 ml-4"><img src="https://icones.pro/wp-content/uploads/2021/02/icone-twitter-orange.png" alt="Twitter" class="w-8 h-8 mx-auto"></a>
-                    </div>
                 </div>
                 <div class="flex space-x-8">
                     <div>
-<<<<<<< HEAD
                         <h3 class="font-bold text-left text-red-600">Compañía</h3>
-=======
-                        <h3 class="text-xl font-semibold text-gray-900">Compañía</h3>
->>>>>>> maciel
                         <ul class="mt-2 text-gray-600">
                             <li><a href="#" class="hover:underline">A cerca</a></li>
                             <li class="mt-1"><a href="#" class="hover:underline">Carreras</a></li>
@@ -28,11 +19,7 @@
                         </ul>
                     </div>
                     <div>
-<<<<<<< HEAD
                         <h3 class="font-bold text-left text-red-600">Destinos</h3>
-=======
-                        <h3 class="text-xl font-semibold text-gray-900">Destinos</h3>
->>>>>>> maciel
                         <ul class="mt-2 text-gray-600">
                             <li><a href="#" class="hover:underline">Maldivas</a></li>
                             <li class="mt-1"><a href="#" class="hover:underline">Los Angeles</a></li>
@@ -41,18 +28,10 @@
                         </ul>
                     </div>
                     <div>
-<<<<<<< HEAD
                         <h3 class="font-bold text-left text-red-600">Ayuda</h3>
                         <div class="mt-2">
                             <p class="mt-1 text-gray-600 text-sm">Si tienes dudas comunicate a este correo:</p>
                             <h5 class="font-bold text-center text-red-600 ">travelgo@gmail.com</h5>
-=======
-                        <h3 class="text-xl font-semibold text-gray-900">Suscríbase a nuestro boletín</h3>
-                        <div class="mt-2">
-                            <input type="email" placeholder="Tu dirección de correo" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <button class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto mt-4">Suscribete</button>
-                            <p class="mt-1 text-gray-600 text-sm">* Le enviaremos actualizaciones semanales para su mejor paquete turístico.</p>
->>>>>>> maciel
                         </div>
                     </div>
                 </div>

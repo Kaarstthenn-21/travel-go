@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=bakbak-one:400|braah-one:400|carattere:400" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/4f61daaf70.js" crossorigin="anonymous"></script>
-
     <title>{{ config('app.name', 'TravelGo') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>

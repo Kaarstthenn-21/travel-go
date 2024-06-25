@@ -5,6 +5,10 @@ use App\Http\Controllers\PaquetesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Cors;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PackageController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +31,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/create-package', [PackageController::class, 'createPackage'])->name('create.package');
+Route::get('/payment', [PaymentController::class, 'showPaymentPage'])->name('payment.page');
+Route::get('/pago/tarjeta', [PaymentController::class, 'showCardPage'])->name('payment.card');
+Route::post('/pago/procesar', [PaymentController::class, 'processPayment'])->name('payment.process');
+Route::get('/pago/exito', function() {
+    return 'Pago exitoso'; // Define una vista adecuada para el éxito del pago
+})->name('payment.success');
 
 
 require __DIR__ . '/auth.php';

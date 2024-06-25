@@ -6,20 +6,14 @@
             
             <!-- Contenido superpuesto -->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-<<<<<<< HEAD
                 <div class="text-sm font-bold" >Explorar</div>
                 <div class="text-8xl font-bold" style="font-family: 'Carattere'">Paisaje</div>
-=======
-                <div class="text-sm" >Explorar</div>
-                <div class="text-9xl font-bold" style="font-family: 'Carattere'">Paisaje</div>
->>>>>>> maciel
             </div>
         </div>
         
         <!-- Contenedor de cuerpo -->
         <div class="w-2/3 mx-auto mt-[-50px] mb-10 shadow-lg" >
             <!-- Pestañas -->
-<<<<<<< HEAD
             <div class="flex justify-center h-[50px] w-full">
                 <button class="tab-button px-4 bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10" onclick="window.location='{{ route('reserva.tab', 'informacion') }}'">Informacion</button>
                 <button class="tab-button px-4 bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10" onclick="window.location='{{ route('reserva.tab', 'plan-viaje') }}'">Plan de viaje</button>
@@ -33,29 +27,6 @@
                     <!--informacion-->
                         <!--Estructura a la izquierda-->
                         <div class="flex flex-col items-center h-auto w-[90%] mt-5">
-=======
-            <div class="flex justify-center h-[80px] w-full">
-                <button style="font-family: 'bakbak one'" class="tab-button text-2xl px-4 bg-gray-100 w-1/3 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10" onclick="window.location='{{ route('reserva.tab', 'informacion') }}'">
-                    <i class="fa-solid fa-circle-info mr-2"></i>
-                    Informacion
-                </button>
-                <button style="font-family: 'bakbak one'" class="tab-button text-2xl px-4 bg-gray-100 w-1/3 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10" onclick="window.location='{{ route('reserva.tab', 'plan-viaje') }}'">
-                    <i class="fas fa-calendar mr-2"></i>
-                    Plan de viaje
-                </button>
-                <button style="font-family: 'bakbak one'" class="tab-button text-2xl  px-4 bg-gray-100 w-1/3 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10" onclick="window.location='{{ route('reserva.tab', 'ubicacion') }}'">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    Ubicación
-                </button>
-            </div>
-            <!--Cuerpo-->
-            <div class="flex justify-center bg-white space-x-[10px] w-full">   
-                <div class="flex flex-wrap justify-center space-x-[10px] h-auto ml-10 w-[60%]">
-                    <div class="tab-content" @if ($activeTab === 'informacion') style="display: block;" @endif>
-                    <!--informacion-->
-                        <!--Estructura a la izquierda-->
-                            <div class="flex flex-col items-center h-[1780px] w-[90%] mt-5">
->>>>>>> maciel
                         <!--descripcion-->
                             <div class="w-full">
                                 <h1 class="text-4xl font-bold inline">Suiza</h1>
@@ -111,43 +82,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                        <!--galerias-->
-                            <div class="w-full mt-10">
-                                <h1 class="text-4xl font-bold col-span-2">De nuestra Galería</h1> 
-                                <p class="mt-10">Suiza es conocida por su belleza alpina, sus paisajes impresionantes y su encanto pintoresco. El país se encuentra en el corazón de Europa y está rodeado de majestuosas montañas, lagos cristalinos y verdes prados.</p>   
-<<<<<<< HEAD
-                                <div class="w-[80%] grid grid-cols-2 gap-4 mt-10 mx-auto">
-                                    <div class="flex justify-center">
-                                        <img src="{{asset('images/suiza1.jpg')}}" alt="Imagen de suiza1" class="w-[250px] h-[250px] object-cover">
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="{{asset('images/suiza2.jpg')}}" alt="Imagen de suiza2" class="w-[250px] h-[250px] object-cover">
-                                    </div>
-                                    <div class="flex justify-center">
-=======
-                                <div class="w-[80%] justify-left grid grid-cols-2 mt-10">
-                                    <div class="flex justify-left mb-5">
-                                        <img src="{{asset('images/suiza1.jpg')}}" alt="Imagen de suiza1" class="w-[250px] h-[250px] object-cover">
-                                    </div>
-                                    <div class="flex justify-left">
-                                        <img src="{{asset('images/suiza2.jpg')}}" alt="Imagen de suiza2" class="w-[250px] h-[250px] object-cover">
-                                    </div>
-                                    <div class="flex justify-left">
->>>>>>> maciel
-                                        <img src="{{asset('images/suiza3.jpg')}}" alt="Imagen de suiza3" class="w-[250px] h-[250px] object-cover">
-                                    </div>
-                                </div>
-                            </div>
-                        
                         </div>
                     </div>                    
 
                 <!--Plan de viaje-->
                     <div class="tab-content" @if ($activeTab === 'plan-viaje') style="display: block;" @endif>
-<<<<<<< HEAD
-=======
-                    <div class="w-full h-[1400px]">
->>>>>>> maciel
                         <div class="flex items-center space-x-4 mt-10">
                             <div class="bg-[#F05A22] text-white rounded-lg w-10 h-10 flex items-center justify-center font-bold mr-10">
                                 01
@@ -186,11 +125,7 @@
                             <div class="bg-[#F05A22] text-white rounded-lg w-10 h-10 flex items-center justify-center font-bold mr-10">
                                 03
                             </div>
-<<<<<<< HEAD
                             <h2 class="text-xl font-bold">Día 2: Visitando Zurich, Ginebra Y Zermatt</h2>
-=======
-                            <h2 class="text-xl font-bold">Día 3: Visitando Zurich, Ginebra Y Zermatt</h2>
->>>>>>> maciel
                         </div>
 
                         <div class="ml-24 mt-4">
@@ -203,15 +138,9 @@
 
                         <div class="flex items-center space-x-4 mt-10">
                             <div class="bg-[#F05A22] text-white rounded-lg w-10 h-10 flex items-center justify-center font-bold mr-10">
-<<<<<<< HEAD
                                 02
                             </div>
                             <h2 class="text-xl font-bold">Día 2: Visitando Zurich, Ginebra Y Zermatt</h2>
-=======
-                                04
-                            </div>
-                            <h2 class="text-xl font-bold">Día 4: Visitando Zurich, Ginebra Y Zermatt</h2>
->>>>>>> maciel
                         </div>
 
                         <div class="ml-24 mt-4">
@@ -226,15 +155,9 @@
 
                         <div class="flex items-center space-x-4 mt-10">
                             <div class="bg-[#F05A22] text-white rounded-lg w-10 h-10 flex items-center justify-center font-bold mr-10">
-<<<<<<< HEAD
                                 02
                             </div>
                             <h2 class="text-xl font-bold">Día 2: Visitando Zurich, Ginebra Y Zermatt</h2>
-=======
-                                05
-                            </div>
-                            <h2 class="text-xl font-bold">Día 5: Visitando Zurich, Ginebra Y Zermatt</h2>
->>>>>>> maciel
                         </div>
 
                         <div class="ml-24 mt-4">
@@ -242,46 +165,35 @@
                         </div>
 
                     </div>
-<<<<<<< HEAD
                 <!--Ubicacion-->
                     <div class="tab-content" @if ($activeTab === 'ubicacion') style="display: block;" @endif>
                         <div class="flex flex-col items-center h-auto w-[90%] mt-5">
-=======
-                    </div>
-                <!--Ubicacion-->
-                    <div class="tab-content" @if ($activeTab === 'ubicacion') style="display: block;" @endif>
-                        <div class="flex flex-col h-[1500px] w-[90%] mt-5">
->>>>>>> maciel
                             <h1 class="text-4xl font-bold">Ubicación</h1>
                             <p class="mt-10">Suiza es un país situado en el corazón de Europa, conocido por sus impresionantes paisajes alpinos, sus lagos cristalinos y sus encantadores pueblos. El país limita con Francia, Alemania, Italia, Austria y Liechtenstein, y es conocido por su neutralidad política y su rica historia cultural. La capital de Suiza es Berna, pero las ciudades más grandes y conocidas son Zurich y Ginebra. Suiza es un destino popular para los amantes de la naturaleza, los entusiastas de los deportes de invierno y los aficionados a la cultura y la historia. ¡Descubre la belleza y el encanto de Suiza en tu próximo viaje!</p>
                             <div class="w-full  mt-10 mb-10">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.073682073073!2d8.54169431561763!3d47.37688657916984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e3f3f244f3b3d%3A0x41f6f6f6b8c1f1c!2sZurich%2C%20Suiza!5e0!3m2!1ses!2spe!4v1632213660734!5m2!1ses!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
-<<<<<<< HEAD
                         </div>
                     </div>
                 <!--Galeria-->
                     <div class="tab-content" @if ($activeTab === 'galeria') style="display: block;" @endif>
-
-                    </div>
-=======
-                            <div class="mt-10 w-[90%]">
-                            <h1 style="font-size: 1.5rem;  font-family: 'braah one'">Sus lugares turísticos</h1>
-                            <ul>
-                                <li class="mb-5">
-                                    <strong class="mb-5" style="display: block; font-weight: bold">Casco Antiguo:</strong> Explora la historia emocionante de la ciudad y admira los hermosos parques y espacios verdes en el centro del Casco Antiguo.
-                                </li>
-                                <li class="mb-5">
-                                    <strong class="mb-5" style="display: block; font-weight: bold">Lago de Zurich:</strong> Disfruta de las impresionantes vistas desde los numerosos miradores y sumérgete en la verdadera esencia y belleza de Zurich.
-                                </li>
-                                <li class="mb-5">
-                                    <strong  class="mb-5" style="display: block; font-weight: bold">Museo Nacional Suizo:</strong> Sumérgete en la historia y la cultura suiza en este fascinante museo.
-                                </li>
-                            </ul>
+                        <!--galerias-->
+                        <div class="w-full mt-10">
+                                <h1 class="text-4xl font-bold col-span-2">De nuestra Galería</h1> 
+                                <p class="mt-10">Suiza es conocida por su belleza alpina, sus paisajes impresionantes y su encanto pintoresco. El país se encuentra en el corazón de Europa y está rodeado de majestuosas montañas, lagos cristalinos y verdes prados.</p>   
+                                <div class="w-[80%] grid grid-cols-2 gap-4 mt-10 mx-auto">
+                                    <div class="flex justify-center">
+                                        <img src="{{asset('images/suiza1.jpg')}}" alt="Imagen de suiza1" class="w-[250px] h-[250px] object-cover">
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <img src="{{asset('images/suiza2.jpg')}}" alt="Imagen de suiza2" class="w-[250px] h-[250px] object-cover">
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <img src="{{asset('images/suiza3.jpg')}}" alt="Imagen de suiza3" class="w-[250px] h-[250px] object-cover">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                     </div>
->>>>>>> maciel
 
                 </div> 
                 <!--Catalogo de viajes-->
@@ -290,8 +202,8 @@
                 <div class="flex flex-wrap justify-center space-x-[10px] w-[40%]">
                     <div class="flex flex-col items-center h-[1050px] w-[80%] bg-gray-200 mt-5">
                         <!-- Aquí es donde irá el buscador -->
-                        <div class="w-[95%] p-4 ">
-                            <h2 class="mt-10 text-center text-6xl font-bold mb-2" style="font-family:'Carattere'">Reserva de tour</h2>
+                        <div class="w-full p-4 ">
+                            <h2 class="mt-10 text-center text-4xl font-bold mb-2" style="font-family:'Carattere'">Reserva de tour</h2>
                             <p class="mb-6 mt-5 text-center texts">¡Reserva ahora y no te lo pierdas! Completa el formulario para asegurar tu lugar en esta increíble experiencia de exploración y descubrimiento.</p>
                             <form class="flex justify-center flex-wrap">
                                 <input type="text" class="w-[80%] h-20 p-2 border border-gray-300 mb-2" placeholder="Nombre">
@@ -314,10 +226,7 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <hr class="my-10 border-t border-gray-300">
-=======
->>>>>>> maciel
         </div>
     </div>
 </x-app-layout>

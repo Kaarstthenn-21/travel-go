@@ -22,6 +22,9 @@
                 <li>
                     <a href="{{ url('/paquetes') }}" class="text-gray-300 hover:text-white">Paquetes</a>
                 </li>
+                <li>
+                    <a href="{{ url('/flights') }}" class="text-gray-300 hover:text-white">Vuelos</a>
+                </li>
             </ul> 
             </div>
 

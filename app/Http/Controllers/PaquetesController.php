@@ -19,7 +19,6 @@ class PaquetesController extends Controller
     {
         return view('Paquetes.reserva', ['activeTab' => $tab]);
     }
-<<<<<<< HEAD
     public function galeria()
 {
     $images = [
@@ -31,6 +30,4 @@ class PaquetesController extends Controller
 
     return view('reserva.index', compact('images'));
 }
-=======
->>>>>>> maciel
 }

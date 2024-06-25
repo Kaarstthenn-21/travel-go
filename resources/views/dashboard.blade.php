@@ -15,11 +15,7 @@
     @endpush
     <section id="principal">
     <div class="relative h-screen">
-<<<<<<< HEAD
         <!-- Contenedor del imagen -->
-=======
-        <!-- Contenedor del video -->
->>>>>>> maciel
         <div class="relative w-full h-full">
             <div class="relative w-screen h-screen">
                 <img src="https://media.gq.com.mx/photos/60cf8f0a33c54bdef67610ee/16:9/w_2560%2Cc_limit/paisaje.jpg" alt="Visita Guiada" class="absolute top-0 left-0 w-full h-full object-cover opacity-75">
@@ -31,14 +27,8 @@
                 <h1 class="text-4xl md:text-6xl font-bold text-left mb-10 z-5 px-32 md:px-64">No importa a dónde vayas, te llevaremos allí.</h1>
                 <form action="" method="POST">
                     <div class="bg-white bg-opacity-40 rounded-lg p-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 z-10">
-                        <input type="text" placeholder="¿A dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
-                        <select class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
-                            <option>Tipo de viaje</option>
-                            <option>Vacaciones</option>
-                            <option>Negocios</option>
-                            <option>Aventura</option>
-                        </select>
-                        <input type="text" placeholder="Duración" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
+                        <input type="text" placeholder="¿De dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
+                        <input type="text" placeholder="¿Hacia dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
                         <button class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto">Buscar</button>
                     </div>
                 </form>
@@ -67,12 +57,15 @@
             </div>
 
             <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16 mr-4">
-                </div>
-                <h3 class="text-xl text-center font-bold">Las mejores opciones de vuelos</h3>
-                <p class="text-center text-gray-600">Trabajamos con las principales aerolíneas y agencias de viajes para garantizarte una experiencia de vuelo cómoda.</p>
+                <a href="{{ url('/flights') }}" class="block">
+                    <div class="flex justify-center items-center mb-4">
+                        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16 mr-4">
+                    </div>
+                    <h3 class="text-xl text-center font-bold">Las mejores opciones de vuelos</h3>
+                    <p class="text-center text-gray-600">Trabajamos con las principales aerolíneas y agencias de viajes para garantizarte una experiencia de vuelo cómoda.</p>
+                </a>
             </div>
+
 
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="flex justify-center items-center mb-4">
@@ -106,7 +99,7 @@
     </section>
 
     <!-- Sección creación de paquetes -->
-    <section x-data="{ showModal: false }">
+    <section x-data="{ showModal: {{ $errors->any() ? 'true' : 'false' }} }">
         <div class="container mx-auto p-6">
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <div class="text-center mb-6">
@@ -153,45 +146,53 @@
                     <h2 class="text-2xl font-bold">Construya su propio paquete</h2>
                     <button @click="showModal = false" class="text-gray-500 hover:text-gray-700">&times;</button>
                 </div>
-                <form>
+                <form action="{{ route('create.package') }}" method="POST">
+                    @csrf
                     <div class="mb-4">
                         <label class="block text-gray-700">Introduzca lugar de partida (país, región o ciudad)</label>
-                        <input type="text" placeholder="Suiza" class="w-full px-3 py-2 border rounded-lg">
+                        <input type="text" name="departure" value="{{ old('departure') }}" placeholder="Suiza" class="w-full px-3 py-2 border rounded-lg">
+                        @error('departure')
+                            <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700">Destino de Viaje</label>
-                        <input type="text" placeholder="Brazil" class="w-full px-3 py-2 border rounded-lg">
+                        <input type="text" name="destination" value="{{ old('destination') }}" placeholder="Brazil" class="w-full px-3 py-2 border rounded-lg">
+                        @error('destination')
+                            <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-4 grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-gray-700">Rango de fechas</label>
-                            <input type="date" placeholder="Fecha de inicio" class="w-full px-3 py-2 border rounded-lg">
+                            <label class="block text-gray-700">Fecha de inicio</label>
+                            <input type="date" name="start_date" value="{{ old('start_date') }}" placeholder="Fecha de inicio" class="w-full px-3 py-2 border rounded-lg">
+                            @error('start_date')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div>
-                            <label class="block text-gray-700 invisible">Fecha final</label>
-                            <input type="date" placeholder="Fecha final" class="w-full px-3 py-2 border rounded-lg">
+                            <label class="block text-gray-700">Fecha final</label>
+                            <input type="date" name="end_date" value="{{ old('end_date') }}" placeholder="Fecha final" class="w-full px-3 py-2 border rounded-lg">
+                            @error('end_date')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700">Invitados</label>
-                        <select class="w-full px-3 py-2 border rounded-lg">
-                            <option>2 adultos</option>
-                            <option>1 adulto</option>
-                            <option>3 adultos</option>
-                            <option>2 adultos y 1 niño</option>
+                        <select name="guests" class="w-full px-3 py-2 border rounded-lg">
+                            <option value="2" {{ old('guests') == 2 ? 'selected' : '' }}>2 adultos</option>
+                            <option value="1" {{ old('guests') == 1 ? 'selected' : '' }}>1 adulto</option>
+                            <option value="3" {{ old('guests') == 3 ? 'selected' : '' }}>3 adultos</option>
+                            <option value="4" {{ old('guests') == 4 ? 'selected' : '' }}>2 adultos y 1 niño</option>
                             <!-- Más opciones -->
                         </select>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Reserve una Habitación:</label>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="alojamiento" class="mr-2">
-                            <label for="alojamiento" class="text-gray-700">Alojamiento</label>
-                            <button type="button" class="ml-4 px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700">Escoger habitación</button>
-                        </div>
+                        @error('guests')
+                            <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="text-right">
-                        <button type="button" class="mt-4 px-6 py-2 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700">Comprar</button>
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto block md:inline-block text-center md:text-left">Comprar</button>
                     </div>
                 </form>
             </div>
@@ -276,45 +277,8 @@
             </div>
         </div>
         <div class="mt-8 text-center mb-8">
-<<<<<<< HEAD
         <a href="/paquetes" class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto block md:inline-block text-center md:text-left">Explorar más tours</a>
         </div>
     </div>
     </section>
-=======
-        <button class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto">Explorar más tours</button>
-        </div>
-    </div>
-    </section>
-    
-    <!-- Sección de testimonios -->
-    <section class="py-12">
-        <div class="container mx-auto py-20 px-4 text-center">
-            <h2 class="text-red-500 uppercase tracking-wide font-semibold mb-2">Promoción</h2>
-            <h3 class="text-3xl font-bold text-gray-800 mb-8">Vea lo que nuestros clientes dicen sobre nosotros</h3>
-            <div class="relative bg-white py-24 px-8 rounded-lg shadow-lg max-w-3xl mx-auto min-h-80">
-                <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <button class="bg-gray-200 text-gray-600 hover:bg-gray-300 p-2 rounded-full focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <button class="bg-gray-200 text-gray-600 hover:bg-gray-300 p-2 rounded-full focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="mb-4 py-8">
-                    <img src="https://cdn-icons-png.freepik.com/256/14083/14083134.png?semt=ais_hybrid" alt="Cliente" class="w-16 h-16 mx-auto rounded-full border-4 border-white shadow-lg">
-                </div>
-                <blockquote class="text-gray-600 italic mb-4 px-8">"Lo que realmente me gusta de esta página es la amplia variedad de destinos y opciones de alojamiento que ofrece. Siempre encuentro excelentes ofertas y promociones que se adaptan a mi presupuesto y preferencias."</blockquote>
-                <p class="font-semibold text-gray-800 py-8">Christine Beckers - Diseñadora</p>
-                
-            </div>
-        </div>
-    </section>
->>>>>>> maciel
 </x-app-layout>
