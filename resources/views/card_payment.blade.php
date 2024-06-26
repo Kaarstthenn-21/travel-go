@@ -1,7 +1,6 @@
-<!-- resources/views/card_payment.blade.php -->
 <x-app-layout>
     <section class="mb-8">
-        <div class="container mx-auto mt-20"> <!-- Cambié mt-5 a mt-20 para mayor margen superior -->
+        <div class="container mx-auto mt-20">
             <h1 class="text-3xl font-bold mb-4 text-orange-600">Datos de la Tarjeta</h1>
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <div class="flex items-center mb-4">
