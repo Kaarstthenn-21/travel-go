@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="container mx-auto py-20">
-        <h1 class="text-3xl font-bold mb-4 text-orange-600">Confirmación de Compra</h1>
+        <h1 class="text-3xl font-bold mb-4 text-red-600">Confirmación de Compra</h1>
         <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold mb-4 text-orange-600">Detalles del Paquete</h2>
-            <ul class="list-disc pl-5 mb-4 text-orange-500">
+            <h2 class="text-2xl font-bold mb-4 text-red-600">Detalles del Paquete</h2>
+            <ul class="list-disc pl-5 mb-4 text-black-500">
                 <li><strong>Lugar de partida:</strong> {{ $packageDetails['departure'] }}</li>
                 <li><strong>Destino:</strong> {{ $packageDetails['destination'] }}</li>
                 <li><strong>Rango de fechas:</strong> {{ $packageDetails['start_date'] }} a {{ $packageDetails['end_date'] }}</li>

@@ -43,56 +43,47 @@
     
     <!-- Sección de Servicios -->
     <section id="servicios" class="mt-12">
-    <div class="container mx-auto py-12">
-        <h5 class="font-bold text-center text-red-600 ">CATEGORIA</h5>
-        <h2 class="text-3xl font-bold text-center mb-8">NUESTROS SERVICIOS</h2>
+        <div class="container mx-auto py-12">
+            <h5 class="font-bold text-center text-red-600">CATEGORIA</h5>
+            <h2 class="text-3xl font-bold text-center mb-8">NUESTROS SERVICIOS</h2>
 
-        <div class="fixed-grid">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3284/3284622.png" alt="Visita Guiada" class="w-16 h-16 mr-4">
-                </div>
-                <h3 class="text-xl text-center font-bold">Visitas guiadas</h3>
-                <p class="text-center text-gray-600">Contamos con una amplia selección de recorridos diseñados para brindarte una experiencia única y auténtica.</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <a href="{{ url('/flights') }}" class="block">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
                     <div class="flex justify-center items-center mb-4">
-                        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16 mr-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3284/3284622.png" alt="Visita Guiada" class="w-16 h-16">
+                    </div>
+                    <h3 class="text-xl text-center font-bold">Visitas guiadas</h3>
+                    <p class="text-center text-gray-600">Contamos con una amplia selección de recorridos diseñados para brindarte una experiencia única y auténtica.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-center items-center mb-4">
+                        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16">
                     </div>
                     <h3 class="text-xl text-center font-bold">Las mejores opciones de vuelos</h3>
                     <p class="text-center text-gray-600">Trabajamos con las principales aerolíneas y agencias de viajes para garantizarte una experiencia de vuelo cómoda.</p>
-                </a>
-            </div>
-
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5778/5778339.png" alt="Tours Religiosos" class="w-16 h-16 mr-4">
                 </div>
-                <h3 class="text-xl text-center font-bold">Tours Religiosos</h3>
-                <p class="text-center text-gray-600">Si estás buscando una experiencia espiritual y cultural, nuestros tours religiosos son ideales para ti.</p>
-            </div>
 
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.freepik.com/512/4807/4807695.png" alt="Seguro Médico" class="w-16 h-16 mr-4">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-center items-center mb-4">
+                        <img src="https://cdn-icons-png.freepik.com/512/4807/4807695.png" alt="Seguro Médico" class="w-16 h-16">
+                    </div>
+                    <h3 class="text-xl text-center font-bold">Seguro médico</h3>
+                    <p class="text-center text-gray-600">La seguridad y el bienestar de nuestros viajeros son nuestra máxima prioridad. Por eso, te recomendamos contar con un seguro médico para tu viaje.</p>
                 </div>
-                <h3 class="text-xl text-center font-bold">Seguro médico</h3>
-                <p class="text-center text-gray-600">La seguridad y el bienestar de nuestros viajeros son nuestra máxima prioridad. Por eso, te recomendamos contar con un seguro médico para tu viaje.</p>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- Sección frase llamativa -->
-    <section  class="mt-12">
-        <div class="relative bg-gray-100 py-12">
+    <section class="mt-12">
+        <div class="relative bg-gray-100 py-8">
             <div class="container mx-auto px-4">
-                <img src="https://w7.pngwing.com/pngs/468/526/png-transparent-city-lights-neon-background-city-lights-poster-banner-photography.png" class="cover-image" alt="Fondo de portada">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <h2 class="text-3xl font-bold text-center mb-8 text-white sans-serif'">Hagamos tus próximas vacaciones increíbles</h2>
+                <div class="relative">
+                    <img src="https://w7.pngwing.com/pngs/468/526/png-transparent-city-lights-neon-background-city-lights-poster-banner-photography.png" class="w-full h-full object-cover" alt="Fondo de portada">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-white">Hagamos tus próximas vacaciones increíbles</h2>
+                    </div>
                 </div>
             </div>
         </div>

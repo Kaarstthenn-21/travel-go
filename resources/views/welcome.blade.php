@@ -43,62 +43,53 @@
     
     <!-- Sección de Servicios -->
     <section id="servicios" class="mt-12">
-    <div class="container mx-auto py-12">
-        <h5 class="font-bold text-center text-red-600 ">CATEGORIA</h5>
-        <h2 class="text-3xl font-bold text-center mb-8">NUESTROS SERVICIOS</h2>
+        <div class="container mx-auto py-12">
+            <h5 class="font-bold text-center text-red-600">CATEGORIA</h5>
+            <h2 class="text-3xl font-bold text-center mb-8">NUESTROS SERVICIOS</h2>
 
-        <div class="fixed-grid">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3284/3284622.png" alt="Visita Guiada" class="w-16 h-16 mr-4">
-                </div>
-                <h3 class="text-xl text-center font-bold">Visitas guiadas</h3>
-                <p class="text-center text-gray-600">Contamos con una amplia selección de recorridos diseñados para brindarte una experiencia única y auténtica.</p>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <a href="{{ url('/flights') }}" class="block">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
                     <div class="flex justify-center items-center mb-4">
-                        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16 mr-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3284/3284622.png" alt="Visita Guiada" class="w-16 h-16">
+                    </div>
+                    <h3 class="text-xl text-center font-bold">Visitas guiadas</h3>
+                    <p class="text-center text-gray-600">Contamos con una amplia selección de recorridos diseñados para brindarte una experiencia única y auténtica.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-center items-center mb-4">
+                        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-airplane-vector-icon-png-image_3757854.jpg" alt="Vuelos" class="w-16 h-16">
                     </div>
                     <h3 class="text-xl text-center font-bold">Las mejores opciones de vuelos</h3>
                     <p class="text-center text-gray-600">Trabajamos con las principales aerolíneas y agencias de viajes para garantizarte una experiencia de vuelo cómoda.</p>
-                </a>
-            </div>
-
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5778/5778339.png" alt="Tours Religiosos" class="w-16 h-16 mr-4">
                 </div>
-                <h3 class="text-xl text-center font-bold">Tours Religiosos</h3>
-                <p class="text-center text-gray-600">Si estás buscando una experiencia espiritual y cultural, nuestros tours religiosos son ideales para ti.</p>
-            </div>
 
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex justify-center items-center mb-4">
-                    <img src="https://cdn-icons-png.freepik.com/512/4807/4807695.png" alt="Seguro Médico" class="w-16 h-16 mr-4">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-center items-center mb-4">
+                        <img src="https://cdn-icons-png.freepik.com/512/4807/4807695.png" alt="Seguro Médico" class="w-16 h-16">
+                    </div>
+                    <h3 class="text-xl text-center font-bold">Seguro médico</h3>
+                    <p class="text-center text-gray-600">La seguridad y el bienestar de nuestros viajeros son nuestra máxima prioridad. Por eso, te recomendamos contar con un seguro médico para tu viaje.</p>
                 </div>
-                <h3 class="text-xl text-center font-bold">Seguro médico</h3>
-                <p class="text-center text-gray-600">La seguridad y el bienestar de nuestros viajeros son nuestra máxima prioridad. Por eso, te recomendamos contar con un seguro médico para tu viaje.</p>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- Sección frase llamativa -->
-    <section  class="mt-12">
+    <section class="mt-12">
         <div class="relative bg-gray-100 py-12">
             <div class="container mx-auto px-4">
-                <img src="https://w7.pngwing.com/pngs/468/526/png-transparent-city-lights-neon-background-city-lights-poster-banner-photography.png" class="cover-image" alt="Fondo de portada">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <h2 class="text-3xl font-bold text-center mb-8 text-white sans-serif'">Hagamos tus próximas vacaciones increíbles</h2>
+                <div class="relative">
+                    <img src="https://w7.pngwing.com/pngs/468/526/png-transparent-city-lights-neon-background-city-lights-poster-banner-photography.png" class="w-full h-full object-cover" alt="Fondo de portada">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-white">Hagamos tus próximas vacaciones increíbles</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Sección creación de paquetes -->
+    <!-- Sección creación de paquetes -->
     <section x-data="{ showModal: {{ $errors->any() ? 'true' : 'false' }} }">
         <div class="container mx-auto p-6">
             <div class="bg-white rounded-lg shadow-lg p-6">
@@ -143,61 +134,17 @@
             <div class="fixed inset-0 bg-black opacity-50" @click="showModal = false"></div>
             <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg mx-auto z-50">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-2xl font-bold">Construya su propio paquete</h2>
+                    <h2 class="text-2xl font-bold">Información importante</h2>
                     <button @click="showModal = false" class="text-gray-500 hover:text-gray-700">&times;</button>
                 </div>
-                <form action="{{ route('create.package') }}" method="POST">
-                    @csrf
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Introduzca lugar de partida (país, región o ciudad)</label>
-                        <input type="text" name="departure" value="{{ old('departure') }}" placeholder="Suiza" class="w-full px-3 py-2 border rounded-lg">
-                        @error('departure')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Destino de Viaje</label>
-                        <input type="text" name="destination" value="{{ old('destination') }}" placeholder="Brazil" class="w-full px-3 py-2 border rounded-lg">
-                        @error('destination')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-4 grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700">Fecha de inicio</label>
-                            <input type="date" name="start_date" value="{{ old('start_date') }}" placeholder="Fecha de inicio" class="w-full px-3 py-2 border rounded-lg">
-                            @error('start_date')
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Fecha final</label>
-                            <input type="date" name="end_date" value="{{ old('end_date') }}" placeholder="Fecha final" class="w-full px-3 py-2 border rounded-lg">
-                            @error('end_date')
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Invitados</label>
-                        <select name="guests" class="w-full px-3 py-2 border rounded-lg">
-                            <option value="2" {{ old('guests') == 2 ? 'selected' : '' }}>2 adultos</option>
-                            <option value="1" {{ old('guests') == 1 ? 'selected' : '' }}>1 adulto</option>
-                            <option value="3" {{ old('guests') == 3 ? 'selected' : '' }}>3 adultos</option>
-                            <option value="4" {{ old('guests') == 4 ? 'selected' : '' }}>2 adultos y 1 niño</option>
-                            <!-- Más opciones -->
-                        </select>
-                        @error('guests')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="text-right">
-                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto block md:inline-block text-center md:text-left">Comprar</button>
-                    </div>
-                </form>
+                <p class="mb-4">Si quieres crear tu propio paquete, debes registrarte.</p>
+                <div class="text-right">
+                    <a href="{{ route('register') }}" class="mt-4 px-6 py-2 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700">Registrarse</a>
+                </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- Sección paquetes de moda -->
