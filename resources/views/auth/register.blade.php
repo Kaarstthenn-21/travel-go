@@ -3,7 +3,6 @@
         <div class="w-full max-w-lg h-full bg-white shadow-md overflow-hidden sm:rounded-lg">
             <div class="flex items-center justify-center h-full px-12">    
                 <form method="POST" action="{{ route('register') }}" class="w-full">
-
                     @csrf
 
                     <h1 class="text-4xl md:text-4xl font-bold text-center mb-12" style="font-family: 'Carattere', serif;">Regístrate para obtener<br> Ofertas de Viajes</h1>
