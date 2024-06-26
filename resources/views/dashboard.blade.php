@@ -23,18 +23,19 @@
             </div>
 
             <!-- Contenido superpuesto -->
+            <!--Implementacion de una nueva barra buscadora-->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-bold text-left mb-10 z-5 px-32 md:px-64">No importa a dónde vayas, te llevaremos allí.</h1>
-                <form action="" method="POST">
-                    <div class="bg-white bg-opacity-40 rounded-lg p-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 z-10">
-                        <input type="text" placeholder="¿De dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
-                        <input type="text" placeholder="¿Hacia dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
-                        <button class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto">Buscar</button>
-                    </div>
-                </form>
+                    <form action="{{ route('search') }}" method="GET">
+                        <div class="bg-white bg-opacity-40 rounded-lg p-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 z-10">
+                            <input type="text" name="from" placeholder="¿De dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
+                            <input type="text" name="to" placeholder="¿Hacia dónde?" class="p-2 rounded w-full md:w-auto text-black" style="color: black;">
+                            <button class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto">Buscar</button>
+                        </div>
+                    </form>
                 <!-- Información adicional debajo del formulario -->
                 <div class="flex justify-center items-center mt-4">
-                    <span span class="bg-black bg-opacity-50 py-2 px-4 rounded-lg pointer-events-auto">2,350 personas reservaron el evento formacional en las últimas 24 horas</span>
+                    <span span class="bg-black bg-opacity-50 py-2 px-4 rounded-lg pointer-events-auto">2,350 personas reservaron su hotel y viajes en las últimas 24 horas</span>
                 </div>
             </div>
         </div>

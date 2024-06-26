@@ -3,13 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PaquetesController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\Cors;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PackageController;
-
-
-
+use App\Http\Controllers\TripController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,7 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 Route::post('/create-package', [PackageController::class, 'createPackage'])->name('create.package');
 Route::get('/payment', [PaymentController::class, 'showPaymentPage'])->name('payment.page');
 Route::get('/pago/tarjeta', [PaymentController::class, 'showCardPage'])->name('payment.card');
@@ -38,6 +34,7 @@ Route::post('/pago/procesar', [PaymentController::class, 'processPayment'])->nam
 Route::get('/pago/exito', function() {
     return 'Pago exitoso'; // Define una vista adecuada para el éxito del pago
 })->name('payment.success');
+// Ruta para la pagina de reservas
 
-
+Route::get('/search', [TripController::class, 'search'])->name('trips.search');
 require __DIR__ . '/auth.php';
