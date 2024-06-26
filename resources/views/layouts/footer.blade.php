@@ -19,6 +19,7 @@
                         </ul>
                     </div>
                     <div>
+
                         <h3 class="font-bold text-left text-red-600">Destinos</h3>
                         <ul class="mt-2 text-gray-600">
                             <li><a href="#" class="hover:underline">Maldivas</a></li>
