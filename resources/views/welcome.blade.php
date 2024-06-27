@@ -34,7 +34,7 @@
                 </form>
                 <!-- Información adicional debajo del formulario -->
                 <div class="flex justify-center items-center mt-4">
-                    <span span class="bg-black bg-opacity-50 py-2 px-4 rounded-lg pointer-events-auto">2,350 personas reservaron el evento formacional en las últimas 24 horas</span>
+                    <span span class="bg-black bg-opacity-50 py-2 px-4 rounded-lg pointer-events-auto">2,350 personas reservaron su hotel y viajes en las últimas 24 horas</span>
                 </div>
             </div>
         </div>

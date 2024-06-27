@@ -40,6 +40,8 @@ return [
     'key' => env('STRIPE_KEY'),
     'secret' => env('STRIPE_SECRET'),
     ],
-
-
+    // LLave Api
+    'ipgeolocation' => [
+        'key' => '09169b7b8d2c42a99b43559b3791a36f',
+    ],
 ];
