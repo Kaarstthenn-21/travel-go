@@ -8,12 +8,11 @@
                 </a>
             </div>
             <!-- Navigation Links -->
-            <div class="hidden sm:flex sm:space-x-4 flex-grow">
+            <div class="hidden sm:flex sm:space-x-4 flex-grow  justify-center">
                 <a href="{{ url('/#principal') }}" class="text-gray-300 hover:text-white">Principal</a>
                 <a href="{{ url('/#acerca') }}" class="text-gray-300 hover:text-white">Acerca</a>
                 <a href="{{ url('/#servicios') }}" class="text-gray-300 hover:text-white">Servicios</a>
                 <a href="{{ url('/paquetes') }}" class="text-gray-300 hover:text-white">Paquetes</a>
-                <a href="{{ url('/flights') }}" class="text-gray-300 hover:text-white">Vuelos</a>
             </div>
             <!-- Mobile Menu Button -->
             <div class="sm:hidden flex items-center">
