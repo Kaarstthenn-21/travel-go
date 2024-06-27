@@ -137,62 +137,13 @@
                     <h2 class="text-2xl font-bold">Información importante</h2>
                     <button @click="showModal = false" class="text-gray-500 hover:text-gray-700">&times;</button>
                 </div>
-                <form action="{{ route('create.package') }}" method="POST">
-                    @csrf
-                    <!-- Campos del formulario -->
-                    <button type="submit">Reservar ahora</button>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Introduzca lugar de partida (país, región o ciudad)</label>
-                        <input type="text" name="departure" value="{{ old('departure') }}" placeholder="Suiza" class="w-full px-3 py-2 border rounded-lg">
-                        @error('departure')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Destino de Viaje</label>
-                        <input type="text" name="destination" value="{{ old('destination') }}" placeholder="Brazil" class="w-full px-3 py-2 border rounded-lg">
-                        @error('destination')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="mb-4 grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700">Fecha de inicio</label>
-                            <input type="date" name="start_date" value="{{ old('start_date') }}" placeholder="Fecha de inicio" class="w-full px-3 py-2 border rounded-lg">
-                            @error('start_date')
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Fecha final</label>
-                            <input type="date" name="end_date" value="{{ old('end_date') }}" placeholder="Fecha final" class="w-full px-3 py-2 border rounded-lg">
-                            @error('end_date')
-                                <div class="text-red-500">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700">Invitados</label>
-                        <select name="guests" class="w-full px-3 py-2 border rounded-lg">
-                            <option value="2" {{ old('guests') == 2 ? 'selected' : '' }}>2 adultos</option>
-                            <option value="1" {{ old('guests') == 1 ? 'selected' : '' }}>1 adulto</option>
-                            <option value="3" {{ old('guests') == 3 ? 'selected' : '' }}>3 adultos</option>
-                            <option value="4" {{ old('guests') == 4 ? 'selected' : '' }}>2 adultos y 1 niño</option>
-                            <!-- Más opciones -->
-                        </select>
-                        @error('guests')
-                            <div class="text-red-500">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="text-right">
-                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white p-2 rounded w-full md:w-auto block md:inline-block text-center md:text-left">Comprar</button>
-                    </div>
-                </form>
+                <p class="mb-4">Si quieres crear tu propio paquete, debes registrarte.</p>
+                <div class="text-right">
+                    <a href="{{ route('register') }}" class="mt-4 px-6 py-2 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700">Registrarse</a>
+                </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- Sección paquetes de moda -->
     <section class="mt-12">

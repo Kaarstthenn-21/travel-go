@@ -1,3 +1,5 @@
+<x-app-layout>
+<section class="mt-16">
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +11,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>{{ $from }} a {{ $to }}: {{ $trips->count() }} resultados encontrados</h1>
+            <h1 class="font-bold text-center text-red-600">{{ $from }} a {{ $to }}: {{ $trips->count() }} resultados encontrados</h1>
         </div>
         
         <div class="main-content">
@@ -88,3 +90,5 @@
     </div>
 </body>
 </html>
+</section>
+</x-app-layout>
