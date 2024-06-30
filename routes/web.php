@@ -9,9 +9,10 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\CommentController;
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('inicio');
 
 Route::get('/paquetes', [PaquetesController::class, 'index'])->name('paquetes.index');
 Route::get('/paquetes/reserva/informacion', [PaquetesController::class, 'reserva_view'])->name('Paquetes.reserva');
