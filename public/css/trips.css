@@ -1,0 +1,477 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.trip-details, .reservation-form {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem;
+}
+.trip-details {
+    flex: 3;
+}
+/* para los iconos de span */
+.icons {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha del contenedor */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+.trip-location, .trip-rating {
+    margin-left: 1rem; /* Agrega un espacio entre los elementos */
+}
+.trip-title {
+    flex: 1; 
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;/* Agrega un espacio entre trip-title y icons */
+}
+.title-icons-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+}
+.trip-location, .trip-rating {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #4A5568;
+}
+.trip-image {
+    width: 80%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: block; /* Permite centrar horizontalmente */
+    margin: 0 auto;
+    margin-top: 1rem;
+    /* max-width: */
+}
+
+.trip-description {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #4A5568;
+}
+.trip-features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: #4A5568;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+.reservation-form {
+    margin-top: 1rem; 
+    flex: 1;
+    min-width: 300px;
+}
+.reservar-ahora {
+    color: #4a5568;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem; /* Tamaño del encabezado "Reservar Ahora" */
+    margin-bottom: 1rem; /* Espacio entre el encabezado y la línea */
+    font-weight: bold;
+}
+hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Estilo de la línea */
+    margin-bottom: 2rem;
+}
+.form-group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+}
+.total-price {
+    margin-bottom: 1rem;
+    color: #38a169;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.reservation-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservation-buttons button, .reservation-buttons a {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: white;
+}
+.reservation-buttons .confirm {
+    background-color: #e53e3e;
+}
+.reservation-buttons .wishlist {
+    background-color: #4a5568;
+}
+.reservation-buttons .share {
+    background-color: #3182ce;
+}
+/* estilos para las caracteristicas de vuelos */
+.trip-features {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre cada feature */
+}
+
+.feature i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+/* estilos comentarios */
+
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-filter {
+    margin-bottom: 10px;
+}
+
+.comment-form textarea, .reply-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.comment, .reply {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-rating {
+    display: flex;
+    margin-top: 5px;
+}
+
+.comment-content {
+    margin-bottom: 10px;
+}
+
+.comment-replies {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.reply {
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid #eaeaea;
+}
+
+/* Estilos generales */
+.comment-section {
+    background-color: #f8f8f8; /* Fondo suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espacio interno */
+}
+
+h2 {
+    color: #333; /* Color de título oscuro */
+    font-weight: 600; /* Fuente ligeramente más gruesa */
+}
+
+.comment-filter {
+    display: flex; /* Alineación horizontal */
+    align-items: center; /* Alineación vertical */
+}
+
+.comment-filter label {
+    margin-right: 10px; /* Espacio entre la etiqueta y el selector */
+}
+
+.comment-filter select {
+    padding: 8px 12px; /* Espacio interno del selector */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente del selector */
+}
+
+/* Estilos del formulario de comentarios */
+.comment-form textarea {
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    padding: 10px; /* Espacio interno del área de texto */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente del área de texto */
+}
+
+.comment-form button {
+    background-color: #ff5733; /* Color rojo del botón */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espacio interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+}
+
+.comment-form button:hover {
+    background-color: #e74c3c; /* Color rojo más oscuro al pasar el ratón */
+}
+
+/* Estilos de los comentarios */
+.comment {
+    background-color: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.comment-header {
+    display: flex; /* Alineación horizontal */
+    align-items: center; /* Alineación vertical */
+}
+
+.comment-avatar {
+    width: 40px; /* Ancho del avatar */
+    height: 40px; /* Alto del avatar */
+    border-radius: 50%; /* Avatar circular */
+}
+
+.comment-info {
+    margin-left: 10px; /* Espacio entre el avatar y la información */
+}
+
+.comment-content {
+    color: #333; /* Color de texto oscuro */
+    font-size: 16px; /* Tamaño de fuente del contenido */
+}
+
+.comment-actions {
+    display: flex; /* Alineación horizontal */
+    justify-content: flex-start;
+    margin-top: 10px; /* Espacio superior */
+}
+
+.comment-actions button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+}
+
+.comment-actions button:hover {
+    color: #ff5733; /* Color rojo al pasar el ratón */
+}
+
+/* Estilos de las respuestas */
+.reply-form {
+    margin-top: 10px; /* Espacio superior */
+}
+
+.reply-form textarea {
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    padding: 8px; /* Espacio interno del área de texto */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente del área de texto */
+}
+
+.reply-form button {
+    background-color: #ff5733; /* Color rojo del botón */
+    color: white; /* Color de texto blanco */
+    padding: 8px 16px; /* Espacio interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+}
+
+.reply-form button:hover {
+    background-color: #e74c3c; /* Color rojo más oscuro al pasar el ratón */
+}
+
+/* Estilos de las respuestas */
+.comment-replies {
+    margin-top: 10px; /* Espacio superior */
+}
+
+.reply {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilos de los botones de me gusta y no me gusta */
+.like-button,
+.dislike-button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+}
+
+.like-button:hover {
+    color: #4CAF50; /* Color verde al pasar el ratón */
+}
+
+.dislike-button:hover {
+    color: #f44336; /* Color rojo al pasar el ratón */
+}
+
+/* Estilos de los botones de edición y eliminación */
+.edit-button,
+.delete-button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cursor de mano al pasar el ratón */
+}
+
+.edit-button:hover {
+    color: #2196F3; /* Color azul al pasar el ratón */
+}
+
+.delete-button:hover {
+    color: #f44336; /* Color rojo al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+.trip-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.trip-details {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+.trip-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.trip-description {
+    margin-bottom: 1rem;
+    color: #4A5568;
+}
+.reservation-form {
+    background-color: #f7fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+}
+.total-price {
+    margin-bottom: 1rem;
+    color: #2d3748;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.comment-section {
+    margin-top: 2rem;
+}
+.comment-form {
+    margin-bottom: 2rem;
+}
+.comment-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+.comment-form button {
+    background-color: #3182ce;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.comments-list {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+.comment {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 1rem;
+}
+.comment p {
+    margin-bottom: 0.5rem;
+}
+.comment strong {
+    font-weight: bold;
+} */

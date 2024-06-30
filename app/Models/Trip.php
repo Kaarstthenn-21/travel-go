@@ -18,4 +18,9 @@ class Trip extends Model
         'price',
         'image_url'
     ];
+    //Referencia con los comentarios
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
