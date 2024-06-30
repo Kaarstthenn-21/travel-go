@@ -9,9 +9,9 @@
     <h2 class="text-2xl font-bold mb-4">Comentarios</h2>
 
     <!-- Filtro de Comentarios -->
-    <div class="comment-filter mb-4">
-        <label for="filter" class="mr-8">Filtrar por:</label>
-        <select name="filter" id="filter" class="p-9 border rounded-md">
+    <div class="comment-filter mb-4 flex items-center space-x-4">
+        <label for="filter" class="text-gray-700 font-semibold">Filtrar por:</label>
+        <select name="filter" id="filter" class="px-12 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500">
             <option value="recent">Más Recientes</option>
             <option value="popular">Más Populares</option>
         </select>
@@ -22,9 +22,9 @@
     <div class="comment-form mb-4">
         <form action="{{ route('comments.store') }}" method="POST">
             @csrf
-            <textarea name="content" rows="3" placeholder="Escribe tu comentario aquí..." required class="w-full p-2 border rounded-md mb-2"></textarea>
+            <textarea name="content" rows="3" placeholder="Escribe tu comentario aquí..." required class="w-full p-2 border-gray-300 rounded-md mb-2"></textarea>
             <input type="hidden" name="trip_id" value="{{ $trip->id }}">
-            <button type="submit">Comentar</button>
+            <button class="bg-red-600 text-white px-4 py-2 rounded" type="submit">Comentar</button>
         </form>
     </div>
     @endauth
