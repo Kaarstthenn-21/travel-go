@@ -19,8 +19,10 @@ return new class extends Migration
             $table->boolean('tv')->default(false);
             $table->integer('bathrooms');
             $table->boolean('available')->default(true);
+            $table->string('image_url')->nullable(); // Agregamos el campo image_url como nullable
             $table->timestamps();
         });
+        
     }
 
     /**

@@ -28,6 +28,16 @@ class HotelController extends Controller
             $query->where('price', '<=', $maxPrice);
         }
 
+        // Aplica ordenamiento por precio si se especifica en la solicitud
+        if ($request->has('sort')) {
+            $sort = $request->input('sort');
+            if ($sort === 'asc') {
+                $query->orderBy('price');
+            } elseif ($sort === 'desc') {
+                $query->orderByDesc('price');
+            }
+        }
+
         // Ejecuta la consulta final
         $hotels = $query->get();
 
