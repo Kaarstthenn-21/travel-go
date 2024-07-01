@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
+    /**public function run(): void
     {
         // Vaciar las tablas para evitar conflictos de duplicidad
         DB::table('users')->truncate();
@@ -28,5 +28,11 @@ class DatabaseSeeder extends Seeder
 
         // Ejecutar el seeder de Trip
         $this->call(TripSeeder::class);
+    }*/
+    public function run()
+    {
+        $this->call([
+            PaqueteSeeder::class,
+        ]);
     }
 }
