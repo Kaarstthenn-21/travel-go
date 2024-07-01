@@ -40,4 +40,44 @@ class PaquetesController extends Controller
         $paquete->vuelo->end_date = Carbon::parse($paquete->vuelo->end_date);
         return view('Paquetes.reserva', ['activeTab' => $tab, 'paquete' => $paquete]);
     }
+    public function search(Request $request)
+    {
+        // Validar los datos del formulario
+        $validatedData = $request->validate([
+            'destino' => 'nullable|alpha', // Solo letras, puede ser nulo
+            'fecha' => 'nullable|date|after_or_equal:today|before:' . date('Y-m-d', strtotime('+1 year')), // Fecha válida, no menor a la actual, no mayor a un año
+            'precio' => 'nullable|numeric', // Puede ser nulo, solo números
+        ], [
+            'destino.alpha' => 'El destino solo puede contener letras.',
+            'fecha.date' => 'La fecha ingresada no es válida.',
+            'fecha.after_or_equal' => 'La fecha debe ser igual o posterior a la fecha actual.',
+            'fecha.before' => 'La fecha debe ser menor a un año a partir de la fecha actual.',
+            'precio.numeric' => 'El precio debe ser un número.',
+        ]);
+    
+        // Obtener los paquetes de la base de datos
+        $paquetes = Paquete::query();
+    
+        // Aplicar filtros según los criterios de búsqueda
+        if ($validatedData['destino']) {
+            $paquetes->where('nombre', 'like', '%' . $validatedData['destino'] . '%'); // Búsqueda parcial por nombre
+        }
+    
+        if ($validatedData['fecha']) {
+            $fechaFin = date('Y-m-d', strtotime('+1 week', strtotime($validatedData['fecha']))); // Fecha final una semana después
+            $paquetes->whereBetween('fecha_salida', [$validatedData['fecha'], $fechaFin]); // Buscar entre fechas
+        }
+    
+        if ($validatedData['precio']) {
+            $paquetes->where('precio', '<=', $validatedData['precio']); // Precio menor o igual al ingresado
+        }
+    
+        // Obtener los resultados
+        $paquetes = $paquetes->get();
+    
+        // Pasar los resultados a la vista con el formulario
+        return view('paquetes.index', compact('paquetes'));
+    }
+    
+    
 }

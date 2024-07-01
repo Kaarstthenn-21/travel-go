@@ -26,10 +26,7 @@ Route::get('/paquetes', [PaquetesController::class, 'index'])->name('paquetes.in
 
 Route::get('paquetes/reserva/{id}', [PaquetesController::class, 'reserva_view'])->name('Paquetes.reserva');
 Route::get('paquetes/reserva/{id}/{tab?}', [PaquetesController::class, 'showTab'])->name('Paquetes.showTab');
-Route::get('/paquetes/reserva/informacion', [PaquetesController::class, 'reserva_view'])->name('Paquetes.reserva');
-Route::get('/Paquetes/reserva/{tab}', [PaquetesController::class, 'showTab'])->name('reserva.tab');
-Route::get('/paquetes/search', [PaquetesController::class, 'search'])->name('paquetes.search');
-
+Route::post('/paquetes/search', [PaquetesController::class, 'search'])->name('paquetes.search');
 
 Route::get('/flights', [FlightController::class, 'showFlightsPage']);
 Route::get('/flights/{id}/dates', [FlightController::class, 'getFlightDates']);
