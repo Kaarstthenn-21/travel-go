@@ -1,14 +1,22 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PaquetesController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\TripController;
+
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\CommentController;
+///hoteles
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\HotelAdminController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\AdminController; // Ajusta el controlador según tus necesidades
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +28,38 @@ Route::get('/Paquetes/reserva/{tab}', [PaquetesController::class, 'showTab'])->n
 
 Route::get('/flights', [FlightController::class, 'showFlightsPage']);
 Route::get('/flights/{id}/dates', [FlightController::class, 'getFlightDates']);
+///Hoteles//
+Route::get('/hotels', [HotelController::class, 'index'])->name('hotels.index');
+Route::get('/hotels/{id}', [HotelController::class, 'show'])->name('hotels.show');
+Route::get('/hotels/{hotel}/rooms', [HotelController::class, 'showRooms'])->name('hotels.rooms');
+
+//pagina del admin//
+// Middleware de autenticación y administración
+Route::middleware(['auth'])->group(function () {
+    Route::middleware(\App\Http\Middleware\AdminMiddleware::class)->prefix('admin')->group(function () {
+        
+        // Ruta para el panel de administración
+        Route::get('panel', [AdminController::class, 'index'])->name('admin.panel');
+
+        // Rutas para la gestión de hoteles
+        Route::get('hotels', [HotelAdminController::class, 'index'])->name('admin.hotels.index');
+        Route::get('hotels/create', [HotelAdminController::class, 'create'])->name('admin.hotels.create');
+        Route::post('hotels', [HotelAdminController::class, 'store'])->name('admin.hotels.store');
+        Route::get('hotels/{hotel}/edit', [HotelAdminController::class, 'edit'])->name('admin.hotels.edit');
+        Route::put('hotels/{hotel}', [HotelAdminController::class, 'update'])->name('admin.hotels.update');
+        Route::delete('hotels/{hotel}', [HotelAdminController::class, 'destroy'])->name('admin.hotels.destroy');
+        Route::delete('hotels/{hotel}/rooms/{room}', [HotelAdminController::class, 'destroyRoom'])->name('admin.hotels.rooms.destroy');
+        // Ruta para actualizar la información del hotel en HotelAdminController
+        Route::put('admin/hotels/{hotel}', [HotelAdminController::class, 'update'])->name('admin.hotels.update');
+        // Ruta para actualizar las habitaciones del hotel en HotelAdminController
+        Route::put('admin/hotels/{hotel}/rooms', [HotelAdminController::class, 'updateRooms'])->name('admin.hotels.rooms.update');
+        // Ruta para eliminar una habitación en HotelAdminController
+        Route::delete('admin/hotels/{hotel}/rooms/{room}', [HotelAdminController::class, 'destroyRoom'])->name('admin.hotels.rooms.destroy');
+
+
+    });
+});
+//-----//
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -46,6 +86,7 @@ Route::get('/search', [TripController::class, 'search'])->name('trips.search');
 Route::get('/flight-reservation', function () {
     return view('reserves.flight-reservation');
 })->name('flight-reservation');
+
 //Mostrar los detalles del vuelo
 Route::get('/reserves/{trip}', [TripController::class, 'show'])->name('trips.show');
 

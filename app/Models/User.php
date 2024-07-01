@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Cashier\Billable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+
 
 class User extends Authenticatable
 {
@@ -49,6 +50,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
     //relacion del usuario con los comentarios
     public function comments()
     {
@@ -59,11 +61,20 @@ class User extends Authenticatable
     {
         return $this->id === $comment->user_id;
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
     public function isAdmin()
     {
+        return $this->email === 'admin@example.com';
         return $this->role === 'admin';
+
         // Aquí 'role' es un campo de tu tabla 'users' que indica el rol del usuario.
         // Puedes ajustar esta condición según cómo tengas definidos los roles en tu aplicación.
     }
+
 }
 
