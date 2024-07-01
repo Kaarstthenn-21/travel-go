@@ -14,7 +14,7 @@
         <div class="container mx-auto mt-[-50px] mb-10 shadow-lg">
             <!-- Barra de tareas -->
             <div class="flex justify-center bg-gray-100 h-[100px] rounded-t-lg">
-                <a href="{{ route('paquetes.index', ['sort' => 'fecha']) }}" class="px-4 text-2xl font-bold bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10 rounded-tl-lg">Fecha</a>
+                <a href="{{ route('paquetes.index', ['sort' => 'created_at']) }}" class="px-4 text-2xl font-bold bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10 rounded-tl-lg">Fecha</a>
                 <a href="{{ route('paquetes.index', ['sort' => 'precio_mayor']) }}" class="px-4 text-2xl font-bold bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10">Precio Mayor</a>
                 <a href="{{ route('paquetes.index', ['sort' => 'precio_menor']) }}" class="px-4 text-2xl font-bold bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10">Precio Menor</a>
                 <a href="{{ route('paquetes.index', ['sort' => 'nombre']) }}" class="px-4 text-2xl font-bold bg-gray-100 w-1/4 h-full flex items-center justify-center hover:bg-orange-500 hover:text-white border border-gray-300 z-10 rounded-tr-lg">Nombre (A-Z)</a>
@@ -26,36 +26,36 @@
                 @if (isset($error))
                     <div class="alert alert-danger">{{ $error }}</div>
                 @else
-                <div class="flex flex-wrap justify-center w-full md:w-[60%] mt-5 space-x-2 ">
-                    @foreach ($paquetes as $paquete)
-                    <a class="flex flex-col items-center w-[40%] md:w-[48%] lg:w-[32%] mb-8" href="{{ route('Paquetes.reserva', ['id' => $paquete->id]) }}">
-                        <div class="border border-gray-400 flex flex-col items-center w-full bg-white rounded-lg transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg">
-                            <img src="{{$paquete->imagen}}" alt="{{ $paquete->nombre }}" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="w-full h-8 bg-orange-500 text-white text-sm flex justify-center items-center">
-                                @if ($paquete->vuelo)
-                                    Salida: {{ $paquete->vuelo->start_date }} - Llegada: {{ $paquete->vuelo->end_date }}
-                                @endif
-                            </div>
-                            <div class="w-[85%] p-4">
-                                <h1 class="text-2xl font-bold mt-3">{{ $paquete->nombre }}</h1>
-                                <h2 class="text-sm mt-2">{{ $paquete->descripcion }}</h2>
-                                <div class="flex items-center mt-2">
-                                    <div class="bg-green-500 text-white px-2 py-1 rounded-lg">S/{{ $paquete->precio }}</div>
-                                    <div class="ml-2">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $paquete->rating)
-                                                <i class="fa-solid fa-star h-5 w-5 text-yellow-500 inline-block"></i>
-                                            @else
-                                                <i class="fa-solid fa-star h-5 w-5 text-gray-400 inline-block"></i>
-                                            @endif
-                                        @endfor
+                    <div class="flex flex-wrap justify-center w-full md:w-[60%] mt-5 space-x-2 ">
+                        @foreach ($sortedPaquetes as $paquete)
+                        <a class="flex flex-col items-center w-[40%] md:w-[48%] lg:w-[32%] mb-8" href="{{ route('Paquetes.reserva', ['id' => $paquete->id]) }}">
+                            <div class="border border-gray-400 flex flex-col items-center w-full bg-white rounded-lg transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg">
+                                <img src="{{ $paquete->imagen }}" alt="{{ $paquete->nombre }}" class="w-full h-48 object-cover rounded-t-lg">
+                                <div class="w-full h-8 bg-orange-500 text-white text-sm flex justify-center items-center">
+                                    @if ($paquete->vuelo)
+                                        Salida: {{ $paquete->vuelo->start_date }} - Llegada: {{ $paquete->vuelo->end_date }}
+                                    @endif
+                                </div>
+                                <div class="w-[85%] p-4">
+                                    <h1 class="text-2xl font-bold mt-3">{{ $paquete->nombre }}</h1>
+                                    <h2 class="text-sm mt-2">{{ $paquete->descripcion }}</h2>
+                                    <div class="flex items-center mt-2">
+                                        <div class="bg-green-500 text-white px-2 py-1 rounded-lg">S/{{ $paquete->precio }}</div>
+                                        <div class="ml-2">
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if ($i <= $paquete->rating)
+                                                    <i class="fa-solid fa-star h-5 w-5 text-yellow-500 inline-block"></i>
+                                                @else
+                                                    <i class="fa-solid fa-star h-5 w-5 text-gray-400 inline-block"></i>
+                                                @endif
+                                            @endfor
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    @endforeach
-                </div>
+                        </a>
+                        @endforeach
+                    </div>
                 @endif
 
                 <!-- Buscador -->

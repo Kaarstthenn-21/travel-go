@@ -5,26 +5,53 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paquete;
 use Carbon\Carbon;
+use App\Helpers\MinHeap;
+use App\Helpers\MaxHeap;
+use App\Helpers\BinarySearchTree;
 class PaquetesController extends Controller
 {
     public function index(Request $request)
     {
         $sortBy = $request->query('sort', 'fecha'); // Ordenar por fecha si no se especifica otro
-        
-        // Obtener paquetes ordenados según $sortBy
+        $paquetes = Paquete::all();
+        $sortedPaquetes = [];
+
         if ($sortBy === 'precio_mayor') {
-            $paquetes = Paquete::orderByDesc('precio')->get();
+            $heap = new MaxHeap();
+            foreach ($paquetes as $paquete) {
+                $heap->insert($paquete);
+            }
+            $sortedPaquetes = $heap->getSortedData();
         } elseif ($sortBy === 'precio_menor') {
-            $paquetes = Paquete::orderBy('precio')->get();
+            $heap = new MinHeap();
+            foreach ($paquetes as $paquete) {
+                $heap->insert($paquete);
+            }
+            $sortedPaquetes = $heap->getSortedData();
         } elseif ($sortBy === 'nombre') {
-            $paquetes = Paquete::orderBy('nombre')->get();
+            $compareFunction = function ($a, $b) {
+                return strcmp($a->nombre, $b->nombre);
+            };
+            $tree = new BinarySearchTree($compareFunction);
+            foreach ($paquetes as $paquete) {
+                $tree->insert($paquete);
+            }
+            $sortedPaquetes = $tree->getSortedData();
+        } elseif ($sortBy === 'fecha') {
+            $compareFunction = function ($a, $b) {
+                return $a->created_at <=> $b->created_at;
+            };
+            $tree = new BinarySearchTree($compareFunction);
+            foreach ($paquetes as $paquete) {
+                $tree->insert($paquete);
+            }
+            $sortedPaquetes = $tree->getSortedData();
         } else {
-            $paquetes = Paquete::orderBy('created_at', 'desc')->get(); // Orden por defecto (fecha)
+            $sortedPaquetes = $paquetes;
         }
         
-        return view('Paquetes.index', compact('paquetes'));
+        return view('Paquetes.index', compact('sortedPaquetes'));
     }
-
     public function reserva_view($id)
     {
         $paquete = Paquete::with(['vuelo', 'hotel'])->findOrFail($id);
@@ -56,27 +83,27 @@ class PaquetesController extends Controller
         ]);
     
         // Obtener los paquetes de la base de datos
-        $paquetes = Paquete::query();
+        $sortedPaquetes = Paquete::query();
     
         // Aplicar filtros según los criterios de búsqueda
         if ($validatedData['destino']) {
-            $paquetes->where('nombre', 'like', '%' . $validatedData['destino'] . '%'); // Búsqueda parcial por nombre
+            $sortedPaquetes->where('nombre', 'like', '%' . $validatedData['destino'] . '%'); // Búsqueda parcial por nombre
         }
     
         if ($validatedData['fecha']) {
             $fechaFin = date('Y-m-d', strtotime('+1 week', strtotime($validatedData['fecha']))); // Fecha final una semana después
-            $paquetes->whereBetween('fecha_salida', [$validatedData['fecha'], $fechaFin]); // Buscar entre fechas
+            $sortedPaquetes->whereBetween('fecha_salida', [$validatedData['fecha'], $fechaFin]); // Buscar entre fechas
         }
     
         if ($validatedData['precio']) {
-            $paquetes->where('precio', '<=', $validatedData['precio']); // Precio menor o igual al ingresado
+            $sortedPaquetes->where('precio', '<=', $validatedData['precio']); // Precio menor o igual al ingresado
         }
     
         // Obtener los resultados
-        $paquetes = $paquetes->get();
+        $sortedPaquetes = $sortedPaquetes->get();
     
         // Pasar los resultados a la vista con el formulario
-        return view('paquetes.index', compact('paquetes'));
+        return view('paquetes.index', compact('sortedPaquetes'));
     }
     
     
