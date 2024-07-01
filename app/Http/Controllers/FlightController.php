@@ -9,7 +9,7 @@ class FlightController extends Controller
 {
     public function showFlightsPage()
     {
-        return view('flights'); // Asegúrate de que la vista flights.blade.php esté en resources/views
+        return view('flights'); 
     }
     public function getFlights()
     {
@@ -23,7 +23,7 @@ class FlightController extends Controller
         $flights = json_decode(file_get_contents($flightsPath), true);
         $flightDates = json_decode(file_get_contents($flightDatesPath), true);
 
-        // Merge flight dates into flights
+        
         foreach ($flights as &$flight) {
             $flight['departure_times'] = [];
             foreach ($flightDates as $dates) {

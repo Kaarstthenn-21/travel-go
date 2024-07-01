@@ -79,7 +79,6 @@ class HotelAdminController extends Controller
                 'description' => 'required|string',
                 'price' => 'required|numeric',
                 'image_url' => 'required|url', // Asegúrate de validar que sea una URL válida
-                // Agrega otras reglas de validación según tus necesidades
             ]);
 
             // Creación del nuevo hotel con los datos validados
@@ -87,7 +86,7 @@ class HotelAdminController extends Controller
             $hotel->name = $validatedData['name'];
             $hotel->description = $validatedData['description'];
             $hotel->price = $validatedData['price'];
-            $hotel->image_url = $validatedData['image_url']; // Asegúrate de incluir el image_url
+            $hotel->image_url = $validatedData['image_url']; 
             // Guardar el hotel en la base de datos
             $hotel->save();
 

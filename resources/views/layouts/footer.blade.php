@@ -12,20 +12,20 @@
                     <div>
                         <h3 class="font-bold text-left text-red-600">Compañía</h3>
                         <ul class="mt-2 text-gray-600">
-                            <li><a href="#" class="hover:underline">Acerca</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Carreras</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Blog</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Precios</a></li>
+                            <li>Acerca</li>
+                            <li class="mt-1">Carreras</li>
+                            <li class="mt-1">Blog</li>
+                            <li class="mt-1">Precios</li>
                         </ul>
                     </div>
                     <div>
 
                         <h3 class="font-bold text-left text-red-600">Destinos</h3>
                         <ul class="mt-2 text-gray-600">
-                            <li><a href="#" class="hover:underline">Maldivas</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Los Angeles</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Las Vegas</a></li>
-                            <li class="mt-1"><a href="#" class="hover:underline">Toronto</a></li>
+                            <li>Maldivas</li>
+                            <li class="mt-1">Los Angeles</li>
+                            <li class="mt-1">Las Vegas</li>
+                            <li class="mt-1">Toronto</li>
                         </ul>
                     </div>
                     <div>
