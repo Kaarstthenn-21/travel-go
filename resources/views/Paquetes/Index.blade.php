@@ -30,7 +30,7 @@
                     @foreach ($paquetes as $paquete)
                     <a class="flex flex-col items-center w-[40%] md:w-[48%] lg:w-[32%] mb-8" href="{{ route('Paquetes.reserva', ['id' => $paquete->id]) }}">
                         <div class="border border-gray-400 flex flex-col items-center w-full bg-white rounded-lg transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg">
-                            <img src="https://img.freepik.com/foto-gratis/colores-arremolinados-interactuan-danza-fluida-sobre-lienzo-que-muestra-tonos-vibrantes-patrones-dinamicos-que-capturan-caos-belleza-arte-abstracto_157027-2892.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1719705600&semt=sph" alt="{{ $paquete->nombre }}" class="w-full h-48 object-cover rounded-t-lg">
+                            <img src="{{$paquete->imagen}}" alt="{{ $paquete->nombre }}" class="w-full h-48 object-cover rounded-t-lg">
                             <div class="w-full h-8 bg-orange-500 text-white text-sm flex justify-center items-center">
                                 @if ($paquete->vuelo)
                                     Salida: {{ $paquete->vuelo->start_date }} - Llegada: {{ $paquete->vuelo->end_date }}

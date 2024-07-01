@@ -41,21 +41,21 @@ class PaqueteSeeder extends Seeder
 
         // Array de URLs de imágenes para los destinos
         $imagenes = [
-            'Arequipa' => 'https://example.com/arequipa.jpg',
-            'Trujillo' => 'https://example.com/trujillo.jpg',
-            'Chiclayo' => 'https://example.com/chiclayo.jpg',
-            'Iquitos' => 'https://example.com/iquitos.jpg',
-            'Cusco' => 'https://example.com/cusco.jpg',
-            'Pucallpa' => 'https://example.com/pucallpa.jpg',
-            'Tacna' => 'https://example.com/tacna.jpg',
-            'Tarapoto' => 'https://example.com/tarapoto.jpg',
-            'Juliaca' => 'https://example.com/juliaca.jpg',
-            'Ayacucho' => 'https://example.com/ayacucho.jpg',
-            'Huancayo' => 'https://example.com/huancayo.jpg',
-            'Huaraz' => 'https://example.com/huaraz.jpg',
-            'Chachapoyas' => 'https://example.com/chachapoyas.jpg',
-            'Moquegua' => 'https://example.com/moquegua.jpg',
-            'Puerto Maldonado' => 'https://example.com/puerto-maldonado.jpg',
+            'Arequipa' => 'https://i.pinimg.com/550x/29/2c/c1/292cc19fa1f63a7842a6f3ac24d2ee1c.jpg',
+            'Trujillo' => 'https://content.emarket.pe/common/collections/standard/bb/48/bb481695-657c-486c-bb3d-856651b33959.jpg',
+            'Chiclayo' => 'https://portal.andina.pe/EDPfotografia3/Thumbnail/2019/04/02/000575371W.jpg',
+            'Iquitos' => 'https://blogskystorage.s3.amazonaws.com/2022/01/viaje-a-iquitos.jpeg',
+            'Cusco' => 'https://www.ytuqueplanes.com/imagenes/fotos/novedades/notacusco.jpg',
+            'Pucallpa' => 'https://www.turiweb.pe/wp-content/uploads/2024/04/pucallpa1-050424.jpg',
+            'Tacna' => 'https://radiouno.pe/wp-content/uploads/2021/07/received_1641840639343358-01.jpeg',
+            'Tarapoto' => 'https://viajeradicta.com/wp-content/uploads/2018/12/plaza-de-armas-tarapoto.jpg',
+            'Juliaca' => 'https://elcomercio.pe/resizer/aEbcEUk0a49tRRmYZjpYM6fpGlQ=/620x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/R3JFXZJ4WRFJ7OGWLFWUKZ5RDA.jpg',
+            'Ayacucho' => 'https://viajaconrichy.com/wp-content/uploads/2023/06/Plaza-de-Huamanga-en-Ayacucho.jpg',
+            'Huancayo' => 'https://cdn.www.gob.pe/uploads/document/file/2386646/WhatsApp%20Image%202021-11-10%20at%208.54.45%20AM.jpeg.jpeg',
+            'Huaraz' => 'https://elcomercio.pe/resizer/lYwt7ESbxJDEtASkEWfHw82om30=/980x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/F3E6BXI4A5ADXNH7W3QWDXIUGI.jpg',
+            'Chachapoyas' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Chachapoyas.jpg/640px-Chachapoyas.jpg',
+            'Moquegua' => 'https://prensaregional.pe/wp-content/uploads/2021/11/Plaza-de-Armas-de-Moquegua-25072021.jpg',
+            'Puerto Maldonado' => 'https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2019/12/29190658/51794221_409788829591367_9164288306362449920_n.jpg',
         ];
 
         // Crear paquetes utilizando los vuelos y hoteles

@@ -43,7 +43,7 @@
                                 </table>
                             </div>
                             <div class="w-1/2">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVYk_ZdjOviMt9YFiLlMd-h7yHzYzakEhLw&s" alt="Imagen del hotel" class="w-full h-auto object-cover rounded-lg">
+                                <img src="{{$paquete->imagen}}" alt="Imagen del hotel" class="w-full h-[350px] object-cover rounded-lg">
                             </div>
                         </div>
                         <button class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded">Adquirir Paquete</button>   
@@ -66,7 +66,7 @@
                                 </table>
                             </div>
                             <div class="w-1/2">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVYk_ZdjOviMt9YFiLlMd-h7yHzYzakEhLw&s" alt="Imagen del hotel" class="w-full h-auto object-cover rounded-lg">
+                                <img src="{{$paquete->imagen}}" alt="Imagen del hotel" class="w-full h-[350px] object-cover rounded-lg">
                             </div>
                         </div>
                         <button class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded">Adquirir Paquete</button> 
@@ -85,7 +85,7 @@
                                 </table>
                             </div>
                             <div class="w-1/2">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVYk_ZdjOviMt9YFiLlMd-h7yHzYzakEhLw&s" alt="Imagen del hotel" class="w-full h-auto object-cover rounded-lg">
+                                <img src="{{$paquete->imagen}}" alt="Imagen del hotel" class="w-full  h-[350px] object-cover rounded-lg">
                             </div>
                         </div>
                         <button class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded">Adquirir Paquete</button> 

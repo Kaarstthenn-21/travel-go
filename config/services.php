@@ -42,6 +42,6 @@ return [
     ],
     // LLave Api
     'ipgeolocation' => [
-        'key' => '09169b7b8d2c42a99b43559b3791a36f',
+        'key' => '6e06b29fc4fb44a799631968684a811b',
     ],
 ];
