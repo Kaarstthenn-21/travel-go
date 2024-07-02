@@ -1,4 +1,4 @@
-<x-footer-only-layout>
+<x-app-layout>
     <div class="relative h-auto">
         <!-- Contenedor de la imagen con superposición -->
         <div class="relative h-auto">
@@ -145,6 +145,6 @@
             .catch(error => console.error('Error al cargar hoteles:', error));
     });
 </script>
-</x-footer-only-layout>
+</x-app-layout>
 
 

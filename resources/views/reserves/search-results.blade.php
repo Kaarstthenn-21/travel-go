@@ -52,7 +52,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <div class="tab-buttons flex">
                             <button class="mr-2 bg-red-600 text-white px-4 py-2 rounded">Nuestras mejores opciones</button>
-                            <button class="tab-button bg-white text-gray-700 px-4 py-2 rounded border border-gray-300">Hoteles y apartamentos</button>
+                            <a href="/hotels" class="inline-block bg-white text-gray-700 px-4 py-2 rounded border border-gray-300 hover:bg-gray-100 hover:border-gray-400">Hoteles y apartamentos</a>
                         </div>
                         <select class="sort-dropdown border border-gray-300 rounded p-2">
                             <option>Ordenar por: Recomendados</option>

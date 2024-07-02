@@ -9,6 +9,7 @@ use Carbon\Carbon;
 class Trip extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'from',
         'to',
@@ -19,22 +20,26 @@ class Trip extends Model
         'price',
         'image_url'
     ];
+
     protected $dates = [
         'start_date',
         'end_date',
     ];
-    //Referencia con los comentarios
+
+    // Relación con comentarios
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
 
-        public function getFechaSalidaAttribute($value)
+    // Accesor para convertir la fecha de salida a objeto Carbon
+    public function getStartDateAttribute($value)
     {
         return Carbon::parse($value);
     }
 
-    public function getFechaLlegadaAttribute($value)
+    // Accesor para convertir la fecha de llegada a objeto Carbon
+    public function getEndDateAttribute($value)
     {
         return Carbon::parse($value);
     }
